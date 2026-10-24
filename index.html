@@ -7,9 +7,9 @@
 <meta name="description" content="Probus Commercial Services Limited: independent commercial and cost management for infrastructure projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
-/* Layout: the existing Probus palette (charcoal header, deep navy ground, glossy blue nav) rebuilt as a full-width photo hero, then charcoal panels on navy. Single dark look by design, to match the brand. */
+/* Layout: the existing Probus palette (charcoal header, navy ground, blue accents). Plain company-site structure: photo banner, then simple ruled lists and text, no cards. Single dark look by design, to match the brand. */
 :root {
   --charcoal: #1d1d1d;
   --panel: #2b2b2b;
@@ -26,7 +26,7 @@
   --sky: #60a7f8;
   --text: #f2f5f9;
   --muted: #b3bfcc;
-  --font-head: "Barlow", "Arial", sans-serif;
+  --font-head: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   --wrap: 70rem;
   color-scheme: dark;
@@ -48,24 +48,22 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-h1, h2, h3 { font-family: var(--font-head); line-height: 1.1; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; margin: 0; text-wrap: balance; }
 p { margin: 0; }
 a { color: var(--sky); }
 a:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0 0 0 6px var(--navy-deep); border-radius: 4px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .skip-link { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); top: -100px; z-index: 20; background: #ffffff; color: var(--charcoal); font-weight: 600; padding: 0.6rem 1rem; border-radius: 4px; }
 .skip-link:focus { top: calc(env(safe-area-inset-top, 0px) + 0.5rem); }
-.eyebrow { font-family: var(--font-head); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); }
 .btn {
   display: inline-block; text-decoration: none; font-family: var(--font-head); font-weight: 600; font-size: 1rem;
   padding: 0.7rem 1.4rem; border-radius: 4px; color: #fff;
-  background: linear-gradient(180deg, var(--btn-top), var(--blue-bot));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 4px 14px rgba(0,0,0,.3);
-  border: 1px solid rgba(255,255,255,.25);
+  background: var(--ca-top);
+  border: 1px solid var(--ca-top);
 }
-.btn:hover { filter: brightness(1.1); }
+.btn:hover { background: var(--blue-bot); border-color: var(--blue-bot); }
 .btn-outline { background: transparent; box-shadow: none; border: 1.5px solid rgba(255,255,255,.7); }
-.btn-outline:hover { background: rgba(255,255,255,.08); filter: none; }
+.btn-outline:hover { background: rgba(255,255,255,.08); }
 
 /* Header */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--charcoal); border-bottom: 3px solid var(--blue-mid); }
@@ -96,91 +94,56 @@ a:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0
 
 /* Hero */
 .hero { position: relative; background: var(--charcoal) url("hero.jpg") center 55% / cover no-repeat; }
-.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(13,40,59,.92) 0%, rgba(13,40,59,.85) 55%, rgba(13,40,59,.1) 100%); }
-@media (max-width: 760px) { .hero::before { background: rgba(13,40,59,.86); } }
-.hero .eyebrow { color: #8fc0ff; }
-.hero .wrap { position: relative; padding-block: clamp(3.5rem, 9vw, 7rem); }
-.hero h1 { font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4.25rem); font-weight: 700; max-width: 18ch; margin-top: 0.75rem; }
-.hero .values { margin-top: 1.25rem; font-family: var(--font-head); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.95rem; color: #c9d3de; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; padding: 0; list-style: none; }
-.hero .values li + li::before { content: "•"; color: var(--sky); margin-right: 0.9rem; }
-.hero .lede { margin-top: 1.5rem; max-width: 36rem; font-size: 1.2rem; color: #dbe4ee; }
-.hero .actions { margin-top: 2rem; display: flex; gap: 0.875rem; flex-wrap: wrap; }
-.caption { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 1rem; font-size: 0.875rem; color: #e7edf3; background: rgba(0,0,0,.72); padding: 0.3rem 0.75rem; border-radius: 4px; }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,40,59,.9) 0%, rgba(13,40,59,.8) 50%, rgba(13,40,59,.15) 100%); }
+@media (max-width: 760px) { .hero::before { background: rgba(13,40,59,.84); } }
+.hero .wrap { position: relative; padding-block: clamp(3rem, 8vw, 6rem); }
+.hero h1 { font-size: clamp(2.1rem, 1.5rem + 2.8vw, 3.5rem); font-weight: 600; max-width: 20ch; letter-spacing: -0.01em; }
+.hero .values { margin-top: 0.9rem; font-size: 1.05rem; color: #d3dce6; }
+.hero .lede { margin-top: 1.25rem; max-width: 34rem; font-size: 1.15rem; color: #e3e9f0; }
+.hero .btn { margin-top: 1.75rem; }
+.caption { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 0.75rem; font-size: 0.85rem; color: #e7edf3; background: rgba(0,0,0,.72); padding: 0.25rem 0.6rem; }
 @media (max-width: 600px) {
-  .caption { position: relative; right: auto; bottom: auto; display: block; margin: 0; border-radius: 0; padding-block: 0.5rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-  .hero .values { gap: 0.35rem 1.25rem; }
-  .hero .values li + li::before { content: none; }
+  .caption { position: relative; right: auto; bottom: auto; display: block; margin: 0; padding-block: 0.5rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 }
 
 /* Sections */
 section[id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 84px); }
-.section { padding-block: clamp(3rem, 7vw, 5rem); }
-.section-head { max-width: 44rem; }
-.section-head h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem); font-weight: 700; margin-top: 0.5rem; }
-.section-head p { margin-top: 0.875rem; color: var(--muted); }
+.section { padding-block: clamp(2.75rem, 6vw, 4.5rem); }
+.section h2 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem); font-weight: 600; padding-bottom: 0.6rem; border-bottom: 2px solid var(--blue-mid); }
+.prose { max-width: 42rem; }
+.prose p + p { margin-top: 0.9rem; }
 
-.mission { background: var(--panel); border-block: 1px solid var(--line); }
-.mission .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 2.5rem; align-items: center; }
-.mission h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem); font-weight: 700; margin-top: 0.5rem; }
-.mission blockquote { margin: 0; font-family: var(--font-head); font-weight: 500; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem); line-height: 1.35; padding-left: 1.5rem; border-left: 4px solid var(--blue-mid); }
-@media (max-width: 760px) { .mission .wrap { grid-template-columns: 1fr; gap: 1.25rem; } }
+.mission { background: var(--panel); }
+.mission p { margin-top: 1.25rem; font-size: 1.2rem; max-width: 46rem; }
 
-.services-panel { margin-top: 2.5rem; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.services-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.services-list li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 1rem; padding: 1.5rem; border-bottom: 1px solid var(--line); }
-.services-list li:nth-child(odd) { border-right: 1px solid var(--line); }
-.services-list li:last-child { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
-.services-list h3 { font-size: 1.2rem; font-weight: 600; }
-.services-list p { color: var(--muted); margin-top: 0.3rem; font-size: 1rem; }
-.icon { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; color: #fff; background: linear-gradient(180deg, var(--blue-top), var(--blue-bot)); box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }
-.icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-@media (max-width: 760px) {
-  .services-list { grid-template-columns: 1fr; }
-  .services-list li:nth-child(odd) { border-right: 0; }
-  .services-list li:last-child { grid-column: auto; }
-}
+.two-col { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+@media (max-width: 820px) { .two-col { grid-template-columns: 1fr; gap: 2.75rem; } }
 
-.ca { background: linear-gradient(180deg, var(--ca-top), var(--blue-bot)); }
-.ca .section-head p { color: var(--on-blue); }
-.ca .eyebrow { color: var(--on-blue); }
-.ca-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
-.ca-grid article { background: rgba(10, 25, 60, .35); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 1.5rem; min-width: 0; }
-.ca-grid h3 { font-size: 1.2rem; font-weight: 600; }
-.ca-grid p { margin-top: 0.4rem; color: var(--on-blue); font-size: 1rem; }
-@media (max-width: 900px) { .ca-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { .ca-grid { grid-template-columns: 1fr; } }
+.plain-list { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.plain-list li { padding-block: 0.9rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+.plain-list strong { display: block; font-weight: 600; font-size: 1.08rem; }
+.plain-list span { display: block; color: var(--muted); margin-top: 0.15rem; }
 
-.experience { margin-top: 2.5rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.25rem; }
-.exp-stat, .exp-facts, .exp-sectors { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1.5rem; min-width: 0; }
-.exp-num { font-family: var(--font-head); font-weight: 700; font-size: clamp(3rem, 2.4rem + 3vw, 4.5rem); line-height: 1; color: #ffffff; }
-.exp-num-label { margin-top: 0.5rem; color: var(--muted); }
-.exp-facts { margin: 0; display: grid; gap: 1.25rem; align-content: center; }
-.exp-facts dt { font-family: var(--font-head); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); }
-.exp-facts dd { margin: 0.25rem 0 0; font-size: 1.15rem; }
-.exp-sectors { grid-column: 1 / -1; }
-.sectors { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.sectors li { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 0.95rem; border-radius: 4px; background: var(--panel-2); border: 1px solid var(--line); }
-.sectors li::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: linear-gradient(180deg, var(--blue-top), var(--blue-bot)); flex: none; }
-@media (max-width: 760px) { .experience { grid-template-columns: 1fr; } }
-.work-card { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.work-card img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; display: block; }
-.work-card .body { padding: 1.75rem; display: grid; gap: 0.75rem; align-content: center; }
-.work-card h3 { font-size: 1.4rem; font-weight: 600; }
-.work-card p { color: var(--muted); }
-@media (max-width: 760px) { .work-card { grid-template-columns: 1fr; } }
+.work { background: var(--panel); }
+.work .prose { margin-top: 1.25rem; }
+.bullets { margin: 1.25rem 0 0; padding-left: 1.2rem; columns: 2; column-gap: 2rem; }
+.bullets li { break-inside: avoid; padding-block: 0.2rem; }
+.bullets li::marker { color: var(--sky); }
+@media (max-width: 520px) { .bullets { columns: 1; } }
+.project { margin: 0; }
+.project img { width: 100%; height: auto; display: block; }
+.project figcaption { margin-top: 0.75rem; }
+.project figcaption strong { display: block; font-weight: 600; font-size: 1.08rem; }
+.project figcaption a { display: inline-block; margin-top: 0.3rem; font-weight: 600; }
 
 /* Contact */
-.contact { background: var(--charcoal); border-top: 3px solid var(--blue-mid); }
-.contact .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; }
-@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; gap: 2rem; } }
-.contact-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 1.75rem; display: grid; gap: 1.1rem; min-width: 0; }
-.contact-card .name { font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; }
-.contact-card .role { color: var(--muted); margin-top: -0.9rem; }
-.contact-card dl { margin: 0; display: grid; gap: 1rem; }
-.contact-card dt { font-family: var(--font-head); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); }
-.contact-card dd { margin: 0.15rem 0 0; overflow-wrap: anywhere; }
-.contact-card dd a { color: var(--text); }
-.linkedin { margin-top: 1.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.contact { background: var(--charcoal); }
+.contact-details { margin-top: 1.25rem; display: grid; gap: 0.3rem; font-size: 1.1rem; }
+.contact-details .name { font-weight: 600; font-size: 1.2rem; }
+.contact-details .role { color: var(--muted); margin-bottom: 0.6rem; }
+.contact-details a { color: var(--text); }
+.linkedin { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.linkedin a { font-weight: 600; }
 
 footer { background: var(--charcoal); color: var(--muted); border-top: 1px solid var(--line); font-size: 0.9rem; }
 footer .wrap { padding-block: 1.25rem; display: flex; justify-content: space-between; gap: 0.5rem 1.5rem; flex-wrap: wrap; }
@@ -205,123 +168,88 @@ main:focus { outline: none; }
 <main id="top" tabindex="-1">
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Commercial services for infrastructure</p>
       <h1>Probus Commercial Services Limited</h1>
-      <ul class="values" aria-label="Our values"><li>Transparency</li><li>Integrity</li><li>Fairness</li><li>Trust</li></ul>
-      <p class="lede">Independent commercial support from first budget to final account: cost planning, estimating, procurement, tender evaluation and contract administration.</p>
-      <div class="actions">
-        <a class="btn" href="#contact">Discuss your project</a>
-        <a class="btn btn-outline" href="#services">Our services</a>
-      </div>
+      <p class="values">Transparency, integrity, fairness and trust</p>
+      <p class="lede">Commercial and cost management for civils, rail and building construction projects.</p>
+      <a class="btn" href="#contact">Contact us</a>
     </div>
     <p class="caption">Gloucester Gateway Motorway Services</p>
   </section>
 
   <section class="section mission" aria-labelledby="mission-title">
     <div class="wrap">
-      <div>
-        <p class="eyebrow">Who we are</p>
-        <h2 id="mission-title">Mission statement</h2>
-      </div>
-      <blockquote>To provide the highest standard of commercial support services, and to build long-term professional relationships based on transparency, integrity, fairness and trust.</blockquote>
+      <h2 id="mission-title">Mission statement</h2>
+      <p>Our aim is to provide the highest standard of commercial support services, and to build long-term professional relationships with our clients based on transparency, integrity, fairness and trust.</p>
     </div>
   </section>
 
   <section class="section" id="services" aria-labelledby="services-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">What we do</p>
+    <div class="wrap two-col">
+      <div>
         <h2 id="services-title">Our services</h2>
-        <p>Practical, independent advice that gives clients, contractors and joint ventures confidence in their numbers.</p>
+        <ul class="plain-list">
+          <li><strong>Budget advice and cost plans</strong><span>Budget advice on infrastructure projects, including setting up cost plans.</span></li>
+          <li><strong>Risk management</strong><span>Identification and management of risk.</span></li>
+          <li><strong>Quantification and estimating</strong><span>Measurement of quantities and cost estimating.</span></li>
+          <li><strong>Independent cost advice and forensic audits</strong><span>For joint ventures and partnerships.</span></li>
+          <li><strong>Early contractor involvement (ECI)</strong><span>Advice during the ECI phase, including assessment of prices and best value.</span></li>
+          <li><strong>Procurement</strong><span>Procurement advice and documentation.</span></li>
+          <li><strong>Tender analysis and evaluation</strong></li>
+        </ul>
       </div>
-      <div class="services-panel">
-        <ul class="services-list">
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><h3>Budget advice and cost plans</h3><p>Budget advice for infrastructure projects, including setting up cost plans.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.01"/></svg></span><div><h3>Risk management</h3><p>Identifying commercial risk early and managing it through the project.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M3 21h18"/></svg></span><div><h3>Quantification and estimating</h3><p>Accurate measurement of quantities and cost estimates.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></span><div><h3>Independent cost advice and forensic audits</h3><p>Impartial cost advice and forensic audits for joint ventures and partnerships.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c2.8 0 5 2.2 5 5"/></svg></span><div><h3>Early contractor involvement (ECI)</h3><p>Advice during the ECI phase, including assessment of prices and best value.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><div><h3>Procurement</h3><p>Procurement advice and the preparation of procurement documentation.</p></div></li>
-          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><div><h3>Tender analysis and evaluation</h3><p>Structured analysis and evaluation of tender returns, so awards rest on a sound basis.</p></div></li>
+      <div id="contract-administration">
+        <h2 id="ca-title">Contract administration</h2>
+        <ul class="plain-list" aria-labelledby="ca-title">
+          <li><strong>Valuations</strong><span>Assessment of valuations, including independent verification.</span></li>
+          <li><strong>Variations</strong><span>Management of variations.</span></li>
+          <li><strong>Value engineering</strong><span>Review and assessment of value engineering proposals.</span></li>
+          <li><strong>Claims</strong><span>Claims management.</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="section ca" id="contract-administration" aria-labelledby="ca-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Once work starts</p>
-        <h2 id="ca-title">Contract administration</h2>
-        <p>Keeping the commercial position clear and up to date throughout delivery.</p>
-      </div>
-      <div class="ca-grid">
-        <article><h3>Valuations</h3><p>Valuation assessment, including independent verification.</p></article>
-        <article><h3>Variations</h3><p>Management and assessment of variations.</p></article>
-        <article><h3>Value engineering</h3><p>Review and assessment of value engineering proposals.</p></article>
-        <article><h3>Claims</h3><p>Claims management through to agreement.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="work" aria-labelledby="work-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Track record</p>
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="wrap two-col">
+      <div>
         <h2 id="work-title">Our work and experience</h2>
+        <div class="prose">
+          <p>Over 25 years working on civils, rail and building construction projects.</p>
+          <p>NEC, JCT and ICE conditions of contract, including the relevant sub-contracts. Implementation of S278, S106 and S104 schemes.</p>
+        </div>
+        <ul class="bullets">
+          <li>Roads, including motorways</li>
+          <li>Sewers and storage tanks</li>
+          <li>Bridges over road, rail and water</li>
+          <li>Earthworks and remediation</li>
+          <li>Culverts and retaining walls</li>
+          <li>Rail infrastructure</li>
+          <li>Industrial buildings</li>
+        </ul>
       </div>
-      <div class="experience">
-        <div class="exp-stat">
-          <p class="exp-num">25+</p>
-          <p class="exp-num-label">years on civils, rail and building construction projects</p>
-        </div>
-        <dl class="exp-facts">
-          <div><dt>Conditions of contract</dt><dd>NEC, JCT and ICE, including the relevant sub-contracts</dd></div>
-          <div><dt>Schemes</dt><dd>Implementation of S278, S106 and S104 schemes</dd></div>
-        </dl>
-        <div class="exp-sectors">
-          <h3 class="eyebrow" id="sectors-title">Project experience</h3>
-          <ul class="sectors" aria-labelledby="sectors-title">
-            <li>Roads, including motorways</li>
-            <li>Sewers and storage tanks</li>
-            <li>Bridges over road, rail and water</li>
-            <li>Earthworks and remediation</li>
-            <li>Culverts and retaining walls</li>
-            <li>Rail infrastructure</li>
-            <li>Industrial buildings</li>
-          </ul>
-        </div>
-      </div>
-      <article class="work-card">
-        <img src="gloucester-gateway.jpg" alt="Aerial view of Gloucester Gateway Motorway Services beside the motorway" loading="lazy">
-        <div class="body">
-          <p class="eyebrow">Featured project</p>
-          <h3>Gloucester Gateway Motorway Services Area 1</h3>
-          <p><a class="btn" href="http://motorwayservicesonline.co.uk/Gloucester" target="_blank" rel="noopener">Read more<span class="sr-only"> about Gloucester Gateway Motorway Services (opens in a new tab)</span></a></p>
-        </div>
-      </article>
+      <figure class="project">
+        <img src="gloucester-gateway.jpg" alt="Aerial view of Gloucester Gateway Motorway Services beside the motorway" width="2400" height="829" loading="lazy">
+        <figcaption>
+          <strong>Gloucester Gateway Motorway Services Area 1</strong>
+          <a href="http://motorwayservicesonline.co.uk/Gloucester" target="_blank" rel="noopener">Read more<span class="sr-only"> about Gloucester Gateway Motorway Services (opens in a new tab)</span></a>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Get in touch</p>
-        <h2 id="contact-title">Contact us</h2>
-        <p>Whether you need a cost plan for a new scheme or an independent view on a live contract, we would be glad to hear from you.</p>
-        <div class="linkedin">
-          <a class="btn" href="https://www.linkedin.com/company/308948" target="_blank" rel="noopener">Probus on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
-          <a class="btn btn-outline" href="https://uk.linkedin.com/in/sacabnadim" target="_blank" rel="noopener">Our director on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
-        </div>
-      </div>
-      <div class="contact-card">
+      <h2 id="contact-title">Contact us</h2>
+      <div class="contact-details">
         <p class="name">Sacab Nadim</p>
         <p class="role">Commercial Manager</p>
-        <dl>
-          <div><dt>Phone</dt><dd><a href="tel:+447572210235">+44 (0)7 572 210 235</a></dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:sacab@probuscsl.co.uk">sacab@probuscsl.co.uk</a></dd></div>
-        </dl>
+        <p>Phone: <a href="tel:+447572210235">+44 (0)7 572 210 235</a></p>
+        <p>Email: <a href="mailto:sacab@probuscsl.co.uk">sacab@probuscsl.co.uk</a></p>
       </div>
+      <ul class="linkedin">
+        <li><a href="https://www.linkedin.com/company/308948" target="_blank" rel="noopener">Probus on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://uk.linkedin.com/in/sacabnadim" target="_blank" rel="noopener">Our director on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
     </div>
   </section>
 </main>
