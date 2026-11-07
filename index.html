@@ -254,6 +254,16 @@ section[id], footer[id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) 
 .light .contracts span { border-color: rgba(13,40,59,.35); color: var(--navy); }
 .light a { color: var(--blue-bot); }
 .light a:focus-visible { outline-color: var(--navy-deep); box-shadow: 0 0 0 6px #fff; }
+
+.light.mission, .light.ca { background: #f3f5f8; }
+.light.mission h2::after { background: var(--blue-mid); }
+.light .statement { color: #2e3a46; }
+.light .values { background: rgba(13,40,59,.15); border-color: rgba(13,40,59,.15); }
+.light .values li { background: #fff; }
+.light .values .num { color: var(--blue-bot); }
+.light .ca-grid li { background: #fff; border: 0; border-top: 3px solid var(--blue-mid); box-shadow: 0 1px 2px rgba(13,40,59,.08), 0 6px 18px rgba(13,40,59,.06); }
+.light .ca-grid p { color: #4a5563; }
+.light.ca .section-head h2::after { background: var(--blue-mid); }
 main:focus { outline: none; }
 </style>
 </head>
@@ -293,7 +303,7 @@ main:focus { outline: none; }
     </div>
   </section>
 
-  <section class="section mission" aria-labelledby="mission-title">
+  <section class="section mission light" aria-labelledby="mission-title">
     <div class="wrap">
       <div class="reveal">
         <h2 id="mission-title">Mission statement</h2>
@@ -308,7 +318,7 @@ main:focus { outline: none; }
     </div>
   </section>
 
-  <section class="section light" id="services" aria-labelledby="services-title">
+  <section class="section" id="services" aria-labelledby="services-title">
     <div class="wrap">
       <div class="section-head reveal">
         <h2 id="services-title">Our services</h2>
@@ -326,7 +336,7 @@ main:focus { outline: none; }
     </div>
   </section>
 
-  <section class="section ca" id="contract-administration" aria-labelledby="ca-title">
+  <section class="section ca light" id="contract-administration" aria-labelledby="ca-title">
     <div class="wrap">
       <div class="section-head reveal">
         <h2 id="ca-title">Contract administration</h2>
@@ -341,7 +351,7 @@ main:focus { outline: none; }
     </div>
   </section>
 
-  <section class="section experience light" id="work" aria-labelledby="work-title">
+  <section class="section experience" id="work" aria-labelledby="work-title">
     <div class="wrap">
       <div class="reveal">
         <h2 id="work-title">Our work and experience</h2>
